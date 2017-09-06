@@ -2,3 +2,6 @@ Anaconda consists of packages such as Python, Jupyter Notebook and commonly used
 On terminal of linux type the following command:
 >>> wgethttps ://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-4.0.0-Linux-x8664.sh
 It will download Anaconda*.sh file which is in 64 bit format.
+Install Anaconda by using the following command:
+>>> bashAnaconda2-4.0.0-Linux-x8664.sh
+You need to enter many times >> yes >> and also can specify the directory or it will get the default directory.
