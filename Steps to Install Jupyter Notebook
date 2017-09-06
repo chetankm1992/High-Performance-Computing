@@ -25,3 +25,8 @@ We have specified port 7000 on which our Jupyter server is setup but we can assi
 Here we specified that `8888' port on local machine will be connected to the remote server on port '7000'.
 Now open up a browser and point to http://localhost:8888
 You will see screen of ipython notebook which is running on Stampede login node. You can also open terminal in the following interface which will show the directories of stampede.
+Installing NLTK on stampede
+First on terminal of jupyter notebook run 'import NLTK' and if it is not available then follow the below steps to install NLTK library on jupyter notebook.
+To install NLTK
+>>> pip install -U nltk
+To test if installation was successful go to jupyter terminal and write 'python import nltk'.
