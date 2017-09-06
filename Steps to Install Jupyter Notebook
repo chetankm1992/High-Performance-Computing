@@ -5,3 +5,23 @@ It will download Anaconda*.sh file which is in 64 bit format.
 Install Anaconda by using the following command:
 >>> bashAnaconda2-4.0.0-Linux-x8664.sh
 You need to enter many times >> yes >> and also can specify the directory or it will get the default directory.
+Install Python3 because dependency of Jupyterhub is on Python3
+>>> sudoapt-getinstallpython3-pip
+Install nodejs/npm
+>>> sudoapt-getinstallnpmnodejs-legacy
+Install proxy with npm
+>>> npminstall-gconfigurable-http-proxy
+Install Jupyterhub
+>>> pip3installjupyterhub
+When we have installed the required dependencies, now we install Jupyter notebook
+>>> pip3install-upgradenotebook
+Now you need to setup remote Jupyter server on stampede in order to access the Jupyter notebook by your local machine using that server. To do that we need to specify the login node because by default Stampede assigns random login node whenever someone logs in into stampede.
+>>> ssh username@login1.stampede.tacc.utexas.edu
+Here at the place of 'username' you need to write the user name of TACC as "tg837687" and we have specified login node that is 'login1', likewise you need to define a login node. You need to enter the TACC password and TACC token. TACC token can be obtained by using "TACC token" application on a smart phone. To start getting the tokens, first you need to log into your TACC account on the web and then scan the QR code using smart phone application.
+Afterwards we need to specify the port on which Jupyter server will be accessed.
+>>> ipythonnotebook--no-browser--port = 7000
+We have specified port 7000 on which our Jupyter server is setup but we can assign any other port if the given port is not available. The server will be running on the stampede as you can see on the terminal when you have setup the port. Now open a new terminal and create a ssh tunnel directly to stampede and connect to port 7000.
+>>> ssh-N-f-Llocalhost : 8888 : localhost : 7000username@login1:stampede:tacc:utexas:edu
+Here we specified that `8888' port on local machine will be connected to the remote server on port '7000'.
+Now open up a browser and point to http://localhost:8888
+You will see screen of ipython notebook which is running on Stampede login node. You can also open terminal in the following interface which will show the directories of stampede.
